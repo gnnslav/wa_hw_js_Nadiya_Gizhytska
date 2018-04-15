@@ -1,0 +1,56 @@
+
+@import '../common/styles/variables';
+
+body {
+  background: $bgColor;
+
+}
+
+input, button{
+ 	outline: none;
+	border: none;
+}
+
+.wrap{
+	min-height: 100px;
+	width: 150px;
+	margin: 20px auto;
+	background: $btnColor;
+	border: 1px solid #d0d09e;
+	border-radius: 5px;
+	box-shadow: $boxShadow;
+	.svetofor{
+		.lamps{
+			display: block;
+			margin: 10px auto;
+			height: 100px;
+			width: 100px;
+			border: 1px solid $bgColor;
+			border-radius: 50%;	
+			box-shadow: $boxShadow;
+		}
+		.lamp-color{
+			&:nth-child(2){
+				background: #ff0000;
+			}
+			&:nth-child(3){
+				background: #ffff00;
+			}
+			&:last-child{
+				background: #0ce60c;
+			}
+		}
+		.switch{
+			display: block;
+			margin: 10px auto;
+			height: 30px;
+			width: 100px;
+			border-radius: 7%;
+		}
+		.switch-color{
+			background: $btnColor;
+		}
+	}
+
+	
+}	

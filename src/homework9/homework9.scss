@@ -1,0 +1,46 @@
+body {
+  background: #b3b3cc;
+
+}
+
+input, button{
+ 	outline: none;
+	border: none;
+}
+
+.wrap{
+	min-height: 100px;
+	width: 25%;
+	margin: 20px auto;
+	border: 1px solid #d0d09e;
+	border-radius: 5px;
+	box-shadow: 2px 5px 13px 0px rgba(143,126,143,1);
+	input{
+		display: block;
+		margin: 10px auto;
+		height: 20px;
+		width: 78%;
+		text-align: center;
+		border-radius: 5px;
+	}
+
+	button{
+		display: block;
+		margin: 10px auto;
+		width: 78%;
+		height: 20px;
+		border-radius: 5px;
+	}
+}	
+h3{
+	text-align: center;
+}
+
+.output{
+	margin: 10px auto;
+	width: 78%;
+	height: 20px;
+	text-align: center;
+	border: 1px solid white;
+	border-radius: 5px;
+}
