@@ -39,7 +39,7 @@
     "sass-loader": "^6.0.7",
     "style-loader": "^0.18.2",
     "uglify-js": "^2.8.21",
-    "webpack": "^3.5.1",
+    "webpack": "^3.11.0",
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {

@@ -9045,28 +9045,42 @@ module.exports = __webpack_require__(340);
 __webpack_require__(341);
 
 function dropdownbox(dropdownElement, listContent) {
+
 	var isOpened = dropdownElement.classList.contains('active');
 
 	function opened() {
-		isOpened = true;
 		dropdownElement.classList.add('active');
+		isOpened = true;
 		document.addEventListener('click', closed);
 	}
 
 	function closed() {
-		isOpened = false;
 		dropdownElement.classList.remove('active');
 		document.removeEventListener('click', closed);
+		isOpened = false;
+	}
+
+	function closeAll() {
+		var dropdownElements = document.querySelectorAll('.dropdown');
+		var dropdownElementsArr = Array.from(dropdownElements).filter(function (dropdownElement) {
+			return dropdownElement.classList.contains('active');
+		});
+		dropdownElementsArr.forEach(function (dropdownElement) {
+			dropdownElement.classList.remove('active');
+		});
 	}
 
 	function openedList(dropdownElement) {
 		dropdownElement.stopPropagation();
-		if (isOpened) {
-			closed();
-		} else {
+		if (!isOpened) {
+			closeAll();
 			opened();
+		} else {
+			closed();
+			console.log(isOpened);
 		}
 	}
+
 	dropdownElement.addEventListener('click', openedList);
 
 	function renderTitle() {
@@ -9096,7 +9110,6 @@ var dropdownList1 = ['Title 1', 'lorem ipsum dolor sit amet, consectetur adipisi
 var dropdownList2 = ['Title 2', 'lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ut natus velit dolores repudiandae veniam rerum, eligendi fugit ratione voluptatibus'];
 var dropdownList3 = ['Title 3', 'lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ut natus velit dolores repudiandae veniam rerum, eligendi fugit ratione voluptatibus'];
 var dropdownList4 = ['Title 4', 'lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ut natus velit dolores repudiandae veniam rerum, eligendi fugit ratione voluptatibus'];
-console.log(dropdownList1);
 
 dropdownbox(document.querySelector('#dropdownBox1'), dropdownList1);
 dropdownbox(document.querySelector('#dropdownBox2'), dropdownList2);
